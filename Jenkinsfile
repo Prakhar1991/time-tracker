@@ -32,7 +32,11 @@ pipeline{
                } 
           }    
      
-     
+	     stage('Email Build Status') {
+		     steps {
+			     mail bcc: '', body: '${env.JOB_NAME}  - Build # ${env.BUILD_NUMBER}  - ${currentBuild.currentResult} \\n\\nCheck console output at ${env.BUILD_URL} to view the results.', cc: '', from: '', replyTo: '', subject: '${env.JOB_NAME}  - Build # ${env.BUILD_NUMBER}  - ${currentBuild.currentResult}!!', to: ' cse1106818@gmail.com'
+		     }
+	     }
      
      }   
        }
