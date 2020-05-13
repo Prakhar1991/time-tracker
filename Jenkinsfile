@@ -3,7 +3,7 @@ pipeline{
      stages {
        stage('Build') {
           tools {
-             maven: latest
+             maven 'Maven-3.6.3'
           }
          steps {
               sh 'mvn clean'
