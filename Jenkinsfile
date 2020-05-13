@@ -28,7 +28,7 @@ pipeline{
           steps {
              input("Do you want to store the results?")
              junit '**/target/surefire-reports/TEST-*.xml'
-	     archive 'target/*.jar'
+	     archiveArtifacts 'target/*.jar'
                } 
           }    
      
